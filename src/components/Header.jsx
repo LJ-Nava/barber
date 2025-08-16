@@ -3,11 +3,14 @@ import '../scss/components/_header.scss';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const scrollPosition = window.scrollY;
+      setScrolled(scrollPosition > 50);
+      setCollapsed(scrollPosition > 150);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -21,12 +24,15 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'scrolled' : ''} ${collapsed ? 'collapsed' : ''}`}>
       <nav className="navbar">
         <div className="navbar__logo">
-          <i className="fas fa-cut"></i>
-          <h1>Clinify AI</h1>
+          <img src={require('../assets/Logo/ClinifyAILogo.png')} alt="Clinify AI" className="navbar__logo-img" />
         </div>
         
         <button 
@@ -78,6 +84,17 @@ const Header = () => {
             <span className="navbar__cta-shine"></span>
           </button>
         </div>
+
+        {/* Botón para expandir header colapsado */}
+        {collapsed && (
+          <button 
+            className="navbar__expand-btn"
+            onClick={toggleCollapsed}
+            aria-label="Expand menu"
+          >
+            <i className="fas fa-chevron-down"></i>
+          </button>
+        )}
       </nav>
     </header>
   );

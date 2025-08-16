@@ -1,0 +1,826 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+// ====================================
+// BARBEROS SECTION - DISEÑO ULTRA PREMIUM
+// ====================================
+
+.barberos {
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(15, 15, 15, 0.92) 25%,
+    rgba(26, 26, 26, 0.88) 50%,
+    rgba(15, 15, 15, 0.92) 75%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  overflow: hidden;
+
+  // Efectos de fondo premium
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(212, 175, 55, 0.5) 20%, 
+      rgba(255, 215, 0, 0.8) 50%, 
+      rgba(212, 175, 55, 0.5) 80%, 
+      transparent
+    );
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  // ====================================
+  // HEADER SECTION
+  // ====================================
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(255, 215, 0, 0.9));
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $black-premium;
+    box-shadow: 
+      0 8px 25px rgba(212, 175, 55, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: float3D 4s ease-in-out infinite;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.6s;
+      border-radius: 50px;
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+
+    i {
+      font-size: 1.1rem;
+      color: $black-premium;
+    }
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    
+    span {
+      display: block;
+      &:first-child {
+        font-size: 2.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 4px;
+        margin-bottom: 0.3rem;
+        font-weight: 500;
+      }
+      &:last-child {
+        background: linear-gradient(45deg, #D4AF37, #F4E4BC, #D4AF37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+        text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  // ====================================
+  // NAVIGATION
+  // ====================================
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+  }
+
+  &__nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.3));
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: rgba(212, 175, 55, 0.5);
+      color: $white-pure;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+      i {
+        transform: scale(1.1);
+        color: rgba(212, 175, 55, 0.9);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    i {
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__page-dot {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+      border-color: rgba(212, 175, 55, 0.3);
+      color: $white-pure;
+      transform: scale(1.1);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 215, 0, 0.8));
+      border-color: rgba(212, 175, 55, 0.6);
+      color: $black-premium;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      transform: scale(1.1);
+    }
+  }
+
+  // ====================================
+  // BARBEROS GRID
+  // ====================================
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+// ====================================
+// BARBER CARDS
+// ====================================
+
+.barber-card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.3));
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(212, 175, 55, 0.15);
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(212, 175, 55, 0.3);
+
+    .barber-card__image img {
+      transform: scale(1.1);
+    }
+
+    .barber-card__overlay {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: none;
+      opacity: 1;
+      brightness: 1;
+      contrast: 1;
+      saturate: 1;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__rating {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(255, 215, 0, 0.9));
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $black-premium;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+
+    i {
+      font-size: 0.7rem;
+    }
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    gap: 1rem;
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+    color: $white-pure;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+    flex: 1;
+  }
+
+  &__rank {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(255, 215, 0, 0.9));
+    color: $black-premium;
+    border-radius: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  }
+
+  &__specialty {
+    color: rgba(212, 175, 55, 0.9);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__specialty2 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  &__bio {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 0.2));
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  &__certifications {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.25), rgba(26, 26, 26, 0.15));
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.08);
+
+    .certifications-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: rgba(212, 175, 55, 0.9);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
+
+    .certification-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+
+  &__awards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__book {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 215, 0, 0.8));
+    border: none;
+    border-radius: 50px;
+    color: $black-premium;
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    }
+
+    i {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// ====================================
+// STATS & AWARDS
+// ====================================
+
+.stat {
+  text-align: center;
+
+  &__number {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: $accent-gold;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  &__label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: rgba(212, 175, 55, 0.9);
+  font-weight: 600;
+
+  i {
+    font-size: 0.6rem;
+  }
+}
+
+.certification-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+    border-color: rgba(212, 175, 55, 0.25);
+    color: rgba(212, 175, 55, 0.95);
+    transform: translateX(5px);
+  }
+
+  i {
+    font-size: 0.7rem;
+    color: rgba(212, 175, 55, 0.8);
+  }
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+
+  i {
+    font-size: 1.2rem;
+  }
+
+  &--whatsapp {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.9), rgba(37, 211, 102, 0.7));
+    border-color: rgba(37, 211, 102, 0.5);
+    color: $white-pure;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+  }
+
+  &--instagram {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.9), rgba(225, 48, 108, 0.7));
+    border-color: rgba(225, 48, 108, 0.5);
+    color: $white-pure;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+    }
+  }
+}
+
+// ====================================
+// TEAM STATS
+// ====================================
+
+.barberos__team-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 26, 0.3));
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.team-stat {
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .team-stat__number {
+      color: $accent-gold;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+      transform: scale(1.1);
+    }
+  }
+
+  &__number {
+    font-family: $font-display;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: $white-pure;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ffffff, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__label {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+// ====================================
+// RESPONSIVE DESIGN
+// ====================================
+
+@include respond-to('desktop') {
+  .barberos {
+    &__container {
+      padding: 0 2rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    &__navigation {
+      padding: 0 1rem;
+    }
+  }
+
+  .barber-card {
+    &__image {
+      height: 280px;
+    }
+
+    &__content {
+      padding: 1.5rem;
+    }
+  }
+
+  .barberos__team-stats {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@include respond-to('tablet') {
+  .barberos {
+    padding: 80px 0;
+
+    &__container {
+      padding: 0 1.5rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    &__navigation {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0;
+    }
+
+    &__nav-btn {
+      order: 2;
+      
+      span {
+        display: none;
+      }
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__pagination {
+      order: 1;
+    }
+
+    &__title {
+      font-size: 3rem;
+
+      span:first-child {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .barberos__team-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .team-stat {
+    &__number {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include respond-to('mobile') {
+  .barberos {
+    padding: 60px 0;
+
+    &__container {
+      padding: 0 1rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__navigation {
+      gap: 1rem;
+    }
+
+    &__nav-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    &__page-dot {
+      width: 35px;
+      height: 35px;
+      font-size: 0.8rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+
+      span:first-child {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .barber-card {
+    &__image {
+      height: 250px;
+    }
+
+    &__content {
+      padding: 1.2rem;
+    }
+
+    &__stats {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1rem;
+    }
+
+    &__name {
+      font-size: 1.2rem;
+    }
+  }
+
+  .barberos__team-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .team-stat {
+    &__number {
+      font-size: 1.8rem;
+    }
+
+    &__label {
+      font-size: 0.8rem;
+    }
+  }
+
+  .stat {
+    &__number {
+      font-size: 1rem;
+    }
+
+    &__label {
+      font-size: 0.65rem;
+    }
+  }
+}

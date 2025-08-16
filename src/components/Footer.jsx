@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer__content">
           <div className="footer__brand">
-            <h3>CLINIFY AI</h3>
+            <img src={require('../assets/Logo/ClinifyAILogo.png')} alt="Clinify AI" className="footer__logo" />
             <p>Premium Barbershop Experience</p>
           </div>
           <div className="footer__social">

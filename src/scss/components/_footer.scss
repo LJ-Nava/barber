@@ -14,12 +14,11 @@
   }
 
   &__brand {
-    h3 {
-      font-family: $font-display;
-      font-size: 1.8rem;
-      color: $white-pure;
-      letter-spacing: 2px;
+    .footer__logo {
+      height: 3.5rem;
+      width: auto;
       margin-bottom: 0.5rem;
+      filter: brightness(1.1) drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
     }
 
     p {
@@ -30,25 +29,132 @@
 
   &__social {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 
     a {
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $gray-light;
-      transition: $transition-smooth;
       text-decoration: none;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      
+      // Base 3D effect
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+      box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      i {
+        font-size: 1.4rem;
+        color: $gray-light;
+        transition: all 0.4s ease;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
 
-      &:hover {
-        background: $accent-gold;
-        border-color: $accent-gold;
-        color: $black-premium;
-        transform: translateY(-3px);
+      // Specific social media colors and 3D effects
+      &:nth-child(1) { // Instagram
+        &:hover {
+          background: linear-gradient(145deg, #E4405F, #833AB4, #405DE6);
+          box-shadow: 
+            0 12px 24px rgba(228, 64, 95, 0.4),
+            0 6px 12px rgba(131, 58, 180, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          transform: translateY(-6px) rotateX(15deg);
+          
+          i {
+            color: white;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      &:nth-child(2) { // Facebook
+        &:hover {
+          background: linear-gradient(145deg, #4267B2, #1877F2);
+          box-shadow: 
+            0 12px 24px rgba(24, 119, 242, 0.4),
+            0 6px 12px rgba(66, 103, 178, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          transform: translateY(-6px) rotateX(15deg);
+          
+          i {
+            color: white;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      &:nth-child(3) { // Twitter
+        &:hover {
+          background: linear-gradient(145deg, #1DA1F2, #0d8bd9);
+          box-shadow: 
+            0 12px 24px rgba(29, 161, 242, 0.4),
+            0 6px 12px rgba(13, 139, 217, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          transform: translateY(-6px) rotateX(15deg);
+          
+          i {
+            color: white;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      &:nth-child(4) { // YouTube
+        &:hover {
+          background: linear-gradient(145deg, #FF0000, #CC0000);
+          box-shadow: 
+            0 12px 24px rgba(255, 0, 0, 0.4),
+            0 6px 12px rgba(204, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          transform: translateY(-6px) rotateX(15deg);
+          
+          i {
+            color: white;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      // Pressed effect
+      &:active {
+        transform: translateY(-2px) rotateX(5deg);
+        box-shadow: 
+          0 4px 8px rgba(0, 0, 0, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      // Floating animation
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+          transparent, 
+          rgba(212, 175, 55, 0.1), 
+          transparent, 
+          rgba(212, 175, 55, 0.1), 
+          transparent);
+        border-radius: 22px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        animation: rotate 2s linear infinite;
       }
     }
   }
@@ -69,6 +175,37 @@
       flex-direction: column;
       gap: 2rem;
       text-align: center;
+    }
+
+    &__social {
+      justify-content: center;
+      
+      a {
+        width: 55px;
+        height: 55px;
+        
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to('mobile') {
+  .footer {
+    &__social {
+      gap: 1rem;
+      
+      a {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        
+        i {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }

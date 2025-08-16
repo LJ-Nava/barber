@@ -3,8 +3,9 @@ import React from 'react';
 // Components
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
 import Services from './components/Services';
-import Gallery from './components/Gallery';
+import Barberos from './components/Barberos';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,8 +15,9 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <AboutUs />
         <Services />
-        <Gallery />
+        <Barberos />
         <Contact />
       </main>
       <Footer />
