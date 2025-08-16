@@ -1,0 +1,74 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.footer {
+  background: $black-premium;
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__brand {
+    h3 {
+      font-family: $font-display;
+      font-size: 1.8rem;
+      color: $white-pure;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $gray-light;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $gray-light;
+      transition: $transition-smooth;
+      text-decoration: none;
+
+      &:hover {
+        background: $accent-gold;
+        border-color: $accent-gold;
+        color: $black-premium;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: $gray-light;
+    font-size: 0.85rem;
+  }
+}
+
+// Responsive Design
+@include respond-to('tablet') {
+  .footer {
+    &__content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+  }
+}

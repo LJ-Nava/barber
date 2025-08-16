@@ -1,0 +1,26 @@
+// Premium Color Palette
+$black-premium: #0a0a0a;
+$black-soft: #1a1a1a;
+$gray-dark: #2d2d2d;
+$gray-medium: #4a4a4a;
+$gray-light: #8a8a8a;
+$gray-ultra-light: #f0f0f0;
+$white-off: #fafafa;
+$white-pure: #ffffff;
+$accent-gold: #d4af37;
+$accent-subtle: #b8860b;
+
+// Typography
+$font-display: 'Bebas Neue', cursive;
+$font-heading: 'Playfair Display', serif;
+$font-body: 'Montserrat', sans-serif;
+
+// Transitions
+$transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-quick: all 0.2s ease;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1400px;

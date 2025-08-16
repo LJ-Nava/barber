@@ -1,0 +1,23 @@
+// Utilities
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/animations';
+
+// Base
+@import 'base/global';
+
+// Components
+@import 'components/header';
+@import 'components/hero';
+@import 'components/services';
+@import 'components/gallery';
+@import 'components/contact';
+@import 'components/footer';
+
+// Main App Styles
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, $black-premium 0%, $black-soft 100%);
+}
