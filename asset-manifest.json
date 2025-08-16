@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/barber/static/css/main.0fc78055.css",
+    "main.js": "/barber/static/js/main.795c3c01.js",
+    "index.html": "/barber/index.html",
+    "main.0fc78055.css.map": "/barber/static/css/main.0fc78055.css.map",
+    "main.795c3c01.js.map": "/barber/static/js/main.795c3c01.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fc78055.css",
+    "static/js/main.795c3c01.js"
+  ]
+}
