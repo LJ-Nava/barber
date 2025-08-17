@@ -1,13 +1,43 @@
 {
   "files": {
-    "main.css": "/barber/static/css/main.0fc78055.css",
-    "main.js": "/barber/static/js/main.795c3c01.js",
+    "main.css": "/barber/static/css/main.05bbc915.css",
+    "main.js": "/barber/static/js/main.1772494a.js",
+    "static/media/FondoPrincipalñ.png": "/barber/static/media/FondoPrincipalñ.1fab1d4cbafe50feda76.png",
+    "static/media/CorteClasico.png": "/barber/static/media/CorteClasico.f27dfb709cba7a716b11.png",
+    "static/media/Corte-texturizado.png": "/barber/static/media/Corte-texturizado.7f4dc4b64c161cf96caa.png",
+    "static/media/BarberProfile6BK3.png": "/barber/static/media/BarberProfile6BK3.7174ab8dd27224c1189a.png",
+    "static/media/Undercut.png": "/barber/static/media/Undercut.e5c5ba941942ac22af7a.png",
+    "static/media/Dañado.png": "/barber/static/media/Dañado.e7d1a226e4eb4674d011.png",
+    "static/media/Premium.png": "/barber/static/media/Premium.511da892b5e9e8326315.png",
+    "static/media/Corte-militar.png": "/barber/static/media/Corte-militar.6e0875afaeb3ccdd2329.png",
+    "static/media/Liso.png": "/barber/static/media/Liso.6c263520ca5c55ab0517.png",
+    "static/media/BarberBk2.png": "/barber/static/media/BarberBk2.5a48c21531cdd09cd919.png",
+    "static/media/BarberProfile2BK3.png": "/barber/static/media/BarberProfile2BK3.5118c4f62ab380fb6d51.png",
+    "static/media/Cortedecabellolargo.png": "/barber/static/media/Cortedecabellolargo.9d603563e875d5e927f5.png",
+    "static/media/BarberProfile8BK3.png": "/barber/static/media/BarberProfile8BK3.755f3ca32739f33670c7.png",
+    "static/media/Afro.png": "/barber/static/media/Afro.4d5f0daa55ed5b6b42b0.png",
+    "static/media/BarberProfile4BK3.png": "/barber/static/media/BarberProfile4BK3.672553058a3e33adb6a1.png",
+    "static/media/BarberProfile5BK3.png": "/barber/static/media/BarberProfile5BK3.d2b58e245f1df1fc077a.png",
+    "static/media/Crezpo.png": "/barber/static/media/Crezpo.3c445c75a373275c15b5.png",
+    "static/media/BarberProfile1BK3.png": "/barber/static/media/BarberProfile1BK3.4bfea5639d0a126ff7f5.png",
+    "static/media/Short-Curly-Cro.png": "/barber/static/media/Short-Curly-Cro.821a97656c0fb45eb6e3.png",
+    "static/media/BarbaBK1.png": "/barber/static/media/BarbaBK1.cd1f9941d1009cb5f937.png",
+    "static/media/Corte-fade.png": "/barber/static/media/Corte-fade.9ead46313bf831beb0af.png",
+    "static/media/Cortemohicano..png": "/barber/static/media/Cortemohicano..ae541bcd5c5bdc980698.png",
+    "static/media/Pompadour.png": "/barber/static/media/Pompadour.bea360e31dac250a8b76.png",
+    "static/media/BarberProfile9BK3.png": "/barber/static/media/BarberProfile9BK3.f952b4069c5f4071822c.png",
+    "static/media/Ondulado.png": "/barber/static/media/Ondulado.09524803731c0acc1a9e.png",
+    "static/media/BarberProfile3BK3.png": "/barber/static/media/BarberProfile3BK3.f6e79a145ced8f33abe7.png",
+    "static/media/Cortetaper.png": "/barber/static/media/Cortetaper.81471c18187c057751f5.png",
+    "static/media/ClinifyAILogo.png": "/barber/static/media/ClinifyAILogo.519eaa25f60117bec572.png",
+    "static/media/BarberProfile7BK3.png": "/barber/static/media/BarberProfile7BK3.b036887ad632ed3a6362.png",
+    "static/media/DegradadoPremiumBK2.png": "/barber/static/media/DegradadoPremiumBK2.6e50cc68c2384c317e01.png",
     "index.html": "/barber/index.html",
-    "main.0fc78055.css.map": "/barber/static/css/main.0fc78055.css.map",
-    "main.795c3c01.js.map": "/barber/static/js/main.795c3c01.js.map"
+    "main.05bbc915.css.map": "/barber/static/css/main.05bbc915.css.map",
+    "main.1772494a.js.map": "/barber/static/js/main.1772494a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fc78055.css",
-    "static/js/main.795c3c01.js"
+    "static/css/main.05bbc915.css",
+    "static/js/main.1772494a.js"
   ]
 }
